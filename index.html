@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+	<title>BP</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset = "UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="CSS/css.css">
+
+</head>
+
+<body class="marPad">
+
+<div id ="content">
+
+		<header class="marPad">
+			<h1>Textová adventura</h1>
+		</header>		
+
+		<section>
+			<div class="whiteBG fontA" id ="statePanel" ></div>
+
+			<div id ="leftSide">
+				<div class="whiteBG fontA" id ="mainWindow" ></div> 
+				<div class="inputWrapper marPad">
+					<input list="input" class="whiteBG fontA" id ="textInput" autofocus placeholder = "konzole">
+					<datalist id="input">  
+						
+					</datalist>
+
+				</div>
+			</div>
+			 <br class="clear">
+			
+		</section>
+
+		<footer>
+			<p >Vytvořil Lukáš Hodáň 2016</p>
+		</footer>
+
+	</div>
+
+
+
+	<script src="JS/Observer.js"></script>
+	<script src="JS/ObserverList.js"></script>
+	<script src="JS/SubjectAnswer.js"></script>
+	<script src="JS/Subject.js"></script>
+	
+	<script src="JS/Level.js"></script>
+	<script src="JS/State.js"></script>
+	<script src="JS/AllStates.js"></script>
+	<script src="JS/Inventory.js"></script>
+	<script src="JS/Thing.js"></script>
+	<script src="JS/Place.js"></script>
+	<script src="JS/Person.js"></script>
+	<script src="JS/CommandPut.js"></script>
+	<script src="JS/CommandWhat.js"></script>
+	<script src="JS/CommandTake.js"></script>
+	<script src="JS/CommandGo.js"></script>
+	<script src="JS/CommandUse.js"></script>
+	<script src="JS/CommandEnd.js"></script>
+	<script src="JS/CommandSpeak.js"></script>
+	<script src="JS/CommandCode.js"></script>
+	<script src="JS/CommandHelp.js"></script>
+	<script src="JS/CommandNewGame.js"></script>
+	<script src="JS/Answer.js"></script>
+	<script src="JS/Command.js"></script>
+	<script src="JS/Game.js"></script>
+	
+
+
+	<script>
+	$("#textInput").val("");
+	function extend( obj, extension ){
+		var key;
+  		for (key in extension ){
+   		 	obj[key] = extension[key];
+  		}
+	}
+	
+	var game = new Game(true);
+	
+
+    $("#textInput").keypress(function(e) {
+    	var input;
+    	input = $("#textInput").val();
+    	var input = escapeHtml(input);    
+    	var option;
+    //13 maps to the enter key
+    	if (e.keyCode == 13) {
+        	game.start(input);
+			checkWishper(input);
+
+        	$("#textInput").val("");
+    	}
+	});
+
+	function checkWishper(input){
+		var i;
+		for(i = 0; i < document.getElementById("input").options.length; i+=1){
+			if(document.getElementById("input").options[i].value === input){
+				return false;
+			}
+		}
+		$('#input').append("<option value='" + input + "'>");
+	}
+
+	function escapeHtml(unsafe) {
+    	return unsafe
+         .replace(/&/g, "&amp;")
+         .replace(/</g, "&lt;")
+         .replace(/>/g, "&gt;")
+         .replace(/"/g, "&quot;")
+         .replace(/'/g, "&#039;");
+ 	}
+	</script>
+
+</body>
+
+
+
+
+</html>

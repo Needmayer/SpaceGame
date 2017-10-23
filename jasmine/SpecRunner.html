@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.4.1</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.4.1/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.4.1/jasmine.css">
+
+  <script src="lib/jasmine-2.4.1/jasmine.js"></script>
+  <script src="lib/jasmine-2.4.1/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.4.1/boot.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+
+  <script>
+    function extend( obj, extension ){
+    var key;
+      for (key in extension ){
+        obj[key] = extension[key];
+      }
+  }
+  
+
+  </script>
+
+  <!-- include source files here... -->
+
+
+  <script src="../JS/Observer.js"></script>
+  <script src="../JS/ObserverList.js"></script>
+  <script src="../JS/SubjectAnswer.js"></script>
+  <script src="../JS/Subject.js"></script>
+  ../
+  <script src="../JS/Level.js"></script>
+  <script src="../JS/State.js"></script>
+  <script src="../JS/AllStates.js"></script>
+  <script src="../JS/Inventory.js"></script>
+  <script src="../JS/Thing.js"></script>
+  <script src="../JS/Place.js"></script>
+  <script src="../JS/Person.js"></script>
+  <script src="../JS/CommandPut.js"></script>
+  <script src="../JS/CommandWhat.js"></script>
+  <script src="../JS/CommandTake.js"></script>
+  <script src="../JS/CommandGo.js"></script>
+  <script src="../JS/CommandUse.js"></script>
+  <script src="../JS/CommandEnd.js"></script>
+  <script src="../JS/CommandSpeak.js"></script>
+  <script src="../JS/CommandCode.js"></script>
+  <script src="../JS/CommandHelp.js"></script>
+  <script src="../JS/Answer.js"></script>
+  <script src="../JS/Command.js"></script>
+  <script src="../JS/Game.js"></script>
+
+
+  <!-- include spec files here... -->
+  <script src="spec/Game_spec.js"></script>
+  <script src="spec/Inventory_spec.js"></script>
+  <script src="spec/State_spec.js"></script>
+  <script src="spec/Place_spec.js"></script>
+  <script src="spec/LevelStates_spec.js"></script>
+  <script src="spec/Command_spec.js"></script>
+
+
+  
+
+</head>
+
+<body>
+<div id="content">
+    <div id="mainWindow"></div>
+    <div id="statePanel"></div>
+    <span id="hiddenSpan"></span>
+    <input list="input" id="textInput">
+
+    <datalist id="input">  
+     <option value = "jdi chodba1">
+    </datalist>
+
+  </div>
+</body>
+</html>
